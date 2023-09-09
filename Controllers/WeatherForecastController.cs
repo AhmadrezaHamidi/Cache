@@ -23,7 +23,11 @@ public class WeatherForecastController : ControllerBase
         _memoryCache = memoryCashe;
     }
      
+  
+    
+    
     [HttpGet(Name = "GetWeatherForecast")]
+   
     public  IEnumerable<WeatherForecast> Get(string weatherId)
     {
         string permissionCacheKey = $"permissions-{weatherId}";
@@ -62,9 +66,29 @@ public class WeatherForecastController : ControllerBase
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             });
         ///how to remove kach key
-          /// _memoryCache.Remove(key);
+        
+        /// _memoryCache.Remove(key);
 
 
         return permissionFlags;
     }
+
+
+
+
+    [HttpGet("GetById")]
+    [ResponseCache(Duration = 5)]
+    public WeatherForecast GetById(string weatherId)
+    {
+        var res =  new WeatherForecast
+        {
+            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(1)),
+            TemperatureC = Random.Shared.Next(-20, 55),
+            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+        };
+
+        return res;
+    }
+
+
 }
