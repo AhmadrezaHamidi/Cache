@@ -1,27 +1,46 @@
-# In-MemoriCache
-The Power of Caching in ASP.NET Core
-
-Caching is a crucial technique in web development, and ASP.NET Core offers an effective caching mechanism known as Memory Cache. Caching helps improve application performance by reducing the load on external resources, such as databases or APIs, resulting in faster response times and a smoother user experience.
-
-Memory Cache is an in-memory data storage system that allows you to store and retrieve data quickly. It operates as a key-value store, making it versatile for various data types. By storing frequently accessed or computationally expensive data in Memory Cache, you can avoid redundant calculations and database queries, leading to significant performance improvements.
-
-In ASP.NET Core, integrating Memory Cache is straightforward. After adding the Microsoft.Extensions.Caching.Memory package and configuring it in your Startup.cs, you can inject the IMemoryCache interface into your controllers or services. This enables you to utilize Memory Cache for storing and retrieving data efficiently.
-
-Cache options, such as expiration times and cache invalidation, provide fine-grained control over cached data's behavior. For example, you can set a cache duration for specific data, ensuring it remains fresh for a defined period. Cache invalidation allows you to remove cached items when they are no longer valid or needed.
-
-In conclusion, Memory Cache is a valuable tool in ASP.NET Core for optimizing application performance. By strategically caching data, you can reduce response times, lower the load on external resources, and deliver a faster, more responsive web application to your users.
 
 
+## کش Redis و Memory Cache در ASP.NET Core
+
+کش یک تکنیک مهم در بهبود عملکرد برنامه‌های وب است و ASP.NET Core ابزارهای قدرتمندی برای کشینگ فراهم می‌کند، از جمله Memory Cache و Redis Cache. این ابزارها به کمک ذخیره‌سازی داده‌ها در حافظه، عملیات بازیابی داده‌ها را سریع‌تر می‌کنند و عملکرد برنامه را بهبود می‌بخشند.
+
+### Memory Cache
+
+Memory Cache یک مکانیزم کش ساده و در حافظه است که به داده‌های مکرر دسترسی سریع می‌دهد. با استفاده از Memory Cache در ASP.NET Core، می‌توانید داده‌ها را به صورت کلید-مقدار ذخیره کرده و در عملیات‌های بعدی بازیابی کنید. این کش امکاناتی مانند زمان انقضاء داده‌ها و تنظیمات مربوط به کش را فراهم می‌کند.
+
+### Redis Cache
+
+Redis Cache یک سیستم مدیریت کش قدرتمند در حافظه است که به صورت توزیع‌شده عمل می‌کند. این ابزار از معماری کلید-مقدار استفاده می‌کند و از آنجا که داده‌ها را در حافظه نگه می‌دارد، عملیات بازیابی بسیار سریعی دارد. Redis همچنین امکاناتی مانند نام‌گذاری کلیدها و تنظیمات زمان انقضاء داده‌ها را فراهم می‌کند.
+
+در ASP.NET Core، شما می‌توانید همزمان از هر دو Memory Cache و Redis Cache استفاده کنید تا بهبود عملکرد برنامه و کاهش بار روی منابع خارجی را تجربه کنید. ادغام این ابزارها نیاز به تنظیمات مخصوصی دارد که به شما امکان می‌دهد که بر اساس نیازهای برنامه‌ی‌تان عمل کنید.
+
+استفاده از کش در ASP.NET Core یکی از راه‌های موثر برای بهبود عملکرد برنامه و افزایش سرعت پاسخ به درخواست‌های کاربران است.
+
+با توجه به اصلاحات، این متن را خلاصه‌تر و به شکل اولیه برای مقاله ترکیب می‌کنم:
+
+## کش Redis و Memory Cache در ASP.NET Core
+
+کشنگاه یک ابزار حیاتی در توسعه وب است و ASP.NET Core دو روش قدرتمند برای انجام کشینگ ارائه می‌دهد: Memory Cache و Redis Cache. این روش‌ها با ذخیره داده‌ها در حافظه، عملیات بازیابی را سریع‌تر می‌کنند و عملکرد برنامه را بهبود می‌بخشند.
+
+### Memory Cache
+
+Memory Cache، سیستمی ساده در حافظه برای ذخیره‌سازی داده‌هاست که دسترسی سریع به آنها را فراهم می‌کند. با استفاده از آن در ASP.NET Core، می‌توانید داده‌ها را به صورت کلید-مقدار در حافظه نگه‌داری کرده و به سرعت آنها را بازیابی کنید.
+
+### Redis Cache
+
+Redis Cache یک سیستم مدیریت کش قدرتمند در حافظه است که به صورت توزیع‌شده عمل می‌کند. این ابزار از معماری کلید-مقدار استفاده می‌کند و دارای عملیات بازیابی بسیار سریعی است. Redis همچنین امکانات مانند نام‌گذاری کلیدها و تنظیمات زمان انقضاء داده‌ها را داراست.
+
+در ASP.NET Core، می‌توانید همزمان از هر دو Memory Cache و Redis Cache استفاده کنید تا عملکرد برنامه خود را بهبود بخشیده و بار روی منابع خارجی را کاهش دهید. ترکیب این ابزارها نیاز به تنظیمات خاصی دارد که به شما امکان می‌دهد بهبود عملکرد و پاسخ سریع به درخواست‌های کاربران را تجربه کنید.      Redis and Memory Cache in ASP.NET Core
+Caching is a vital technique in web development, and ASP.NET Core offers two powerful caching mechanisms: Memory Cache and Redis Cache. These methods enhance application performance by storing data in memory, resulting in faster data retrieval and improved overall performance.
+
+Memory Cache
+Memory Cache is a straightforward, in-memory data storage system that provides fast access to stored data. In ASP.NET Core, you can use it to store data in key-value pairs and retrieve it quickly.
+
+Redis Cache
+Redis Cache is a powerful distributed in-memory caching system. It uses a key-value architecture and offers lightning-fast data retrieval. Redis also provides features such as key naming and data expiration settings.
+
+In ASP.NET Core, you can use both Memory Cache and Redis Cache simultaneously to enhance your application's performance and reduce the load on external resources. Combining these tools requires specific configurations, allowing you to experience improved performance and rapid responses to user requests.
 
 
-قدرت کش در ASP.NET Core
 
-کش (Caching) یک تکنیک بسیار مهم در توسعه وب است و ASP.NET Core یک مکانیزم کش موثر به نام Memory Cache ارائه می‌دهد. کش به بهبود عملکرد برنامه کمک می‌کند با کاهش بار روی منابع خارجی مانند پایگاه‌های داده یا رابط‌های برنامه‌نویسی (API)، بهبود زمان پاسخ و تجربه کاربری بهتری ارائه دهد.
 
-Memory Cache یک سیستم ذخیره‌سازی داده در حافظه است که به شما این امکان را می‌دهد که داده‌ها را به سرعت ذخیره و بازیابی کنید. این به عنوان یک ذخیره‌سازی کلید-مقدار عمل می‌کند و برای انواع مختلف داده‌ها مناسب است. با ذخیره داده‌های معمولاً دسترسی‌های مکرر یا محاسبات هزینه‌بر در Memory Cache، می‌توانید از محاسبات تکراری و پرس‌وجوهای پایگاه داده جلوگیری کرده و به بهبود قابل توجهی در عملکرد برنامه دست پیدا کنید.
-
-در ASP.NET Core، ادغام کردن Memory Cache بسیار ساده است. پس از افزودن بسته‌ی Microsoft.Extensions.Caching.Memory و تنظیم آن در فایل Startup.cs، می‌توانید رابط IMemoryCache را به کنترلرها یا خدمات‌تان تزریق کنید. این امکان را به شما می‌دهد که از Memory Cache برای ذخیره و بازیابی داده‌ها با کارایی بالا استفاده کنید.
-
-تنظیمات کش مانند زمان انقضاء و نامعتبرسازی کش امکان کنترل دقیق بر رفتار داده‌های کش شده را فراهم می‌کند. به عنوان مثال، می‌توانید مدت زمان کش برای داده‌های خاصی تنظیم کنید تا به مدت مشخصی تازه بمانند. نامعتبرسازی کش اجازه می‌دهد که موارد کش شده را از حافظه‌نهان حذف کنید زمانی که دیگر معتبر یا نیازی به آنها نیست.
-
-به عبارت دیگر، Memory Cache ابزار مهمی در ASP.NET Core برای بهینه‌سازی عملکرد برنامه است. با ذخیره داده‌ها به صورت استراتژیک، می‌توانید زمان پاسخ را کاهش دهید، بار روی منابع خارجی را کاهش دهید و یک برنامه وب سریع‌تر و پاسخگوتر را به کاربران‌تان ارائه دهید.
